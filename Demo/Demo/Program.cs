@@ -1,5 +1,5 @@
-﻿
-using System;
+﻿using System;
+using System.Text;
 
 namespace Demo
 {
@@ -17,13 +17,13 @@ namespace Demo
 
             for (int i=0 ; i<=valMax ; i++)
             {
-                resultat += String.Format("{0:00} x {1,2} = {2:0.000}",
-                    i,
-                    multiple,
-                    i * multiple);
+                // Interpolated string : C# >= v6.
+                int resOperation = i * multiple;
+                resultat += $"{i:00} x {multiple,2} = {resOperation}";
                 resultat += "\n";
             }
-
+                
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine(resultat);
 
             Console.WriteLine("Press a key");
