@@ -17,8 +17,10 @@ namespace Demo
 
             for (int i=0 ; i<=valMax ; i++)
             {
-                resultat = resultat + i + " x " + multiple;
-                resultat += " = " + (i * multiple);
+                resultat += String.Format("{0:00} x {1,2} = {2:0.000}",
+                    i,
+                    multiple,
+                    i * multiple);
                 resultat += "\n";
             }
 
