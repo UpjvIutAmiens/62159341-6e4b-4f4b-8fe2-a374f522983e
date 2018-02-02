@@ -1,4 +1,5 @@
-﻿namespace Commandes
+﻿using System;
+namespace Commandes
 {
     class LigneCmd // nom complet : Commandes.LigneCmd
     {
@@ -20,7 +21,8 @@
             {
                 if (value < 0)
                 {
-                    System.Console.WriteLine("Erreur");
+                    // throw lève une exception
+                    throw new System.ArgumentOutOfRangeException();
                 }
                 else
                 {
