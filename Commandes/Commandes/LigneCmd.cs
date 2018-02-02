@@ -6,6 +6,16 @@ namespace Commandes
         private double _prixUnitaire;
         private double _quantite;
 
+        // Le constructeur est appelé lors de l'instanciation (création)
+        // de l'objet
+        // Il a même nom que la classe et il n'a aucun type de retour
+        public LigneCmd(string designation, double prixUnitaire, double quantite)
+        {
+            Designation = designation;
+            PrixUnitaire = prixUnitaire;
+            Quantite = quantite;
+        }
+
         // Propriété pour prix unitaire
         public double PrixUnitaire
         {
