@@ -17,20 +17,26 @@ namespace Commandes
 
             // Modification de la désignation
             l1.designation = "Gomme";
-            l1.prixUnitaire = 2.1;
+            l1.PrixUnitaire = 2.1;
             l1.quantite = 10;
 
             LigneCmd l2 = new LigneCmd()
             {
                 designation = "Crayon",
-                prixUnitaire = 0.2,
+                PrixUnitaire = 0.2,
                 quantite = 5
             };
 
+            LigneCmd l3 = new LigneCmd();
+            l3.designation = "Bureau";
+            l3.PrixUnitaire = -1000;
+            l3.quantite = 50;
+
             Console.WriteLine(l1.Description());
             Console.WriteLine(l2.Description());
+            Console.WriteLine(l3.Description());
 
-            Console.WriteLine("Press a key");
+            //Console.WriteLine("Press a key");
             Console.ReadKey();
         }
     }
