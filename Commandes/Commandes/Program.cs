@@ -11,11 +11,11 @@ namespace Commandes
             // Création d'un premier objet LigneCmd
             // l1 est une référence
             LigneCmd l1 = new LigneCmd("Gomme", 2.1, 10);
-
+            
             LigneCmd l2 = new LigneCmd(
+                quantite: 5,
                 designation: "Crayon",
-                prixUnitaire: 0.2,
-                quantite: 5
+                prixUnitaire: 0.2
             );
 
             LigneCmd l3 = new LigneCmd("Bureau", 1000, 50);

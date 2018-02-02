@@ -65,15 +65,19 @@ namespace Commandes
 
         public string Designation { get; set; }
 
-        public double Montant()
+        // Montant est une propriété en lecture seule.
+        public double Montant
         {
-            return Quantite * PrixUnitaire;
+            get
+            {
+                return Quantite * PrixUnitaire;
+            }
         }
 
         public string Description()
         {
             return
-                $"{Designation}, qt:{Quantite}, pu:{PrixUnitaire:C}, mnt:{Montant():C}";
+                $"{Designation}, qt:{Quantite}, pu:{PrixUnitaire:C}, mnt:{Montant:C}";
         }
     }
 }
