@@ -3,9 +3,8 @@ namespace Commandes
 {
     class LigneCmd // nom complet : Commandes.LigneCmd
     {
-        public string designation;
         private double _prixUnitaire;
-        public double quantite;
+        private double _quantite;
 
         // Propriété pour prix unitaire
         public double PrixUnitaire
@@ -31,15 +30,40 @@ namespace Commandes
             }
         }
 
+        public double Quantite
+        {
+            // Acces en lecture
+            get
+            {
+                return _quantite;
+            }
+
+            // Acces en ecriture
+            set
+            {
+                if (value < 0)
+                {
+                    // throw lève une exception
+                    throw new System.ArgumentOutOfRangeException();
+                }
+                else
+                {
+                    _quantite = value;
+                }
+            }
+        }
+
+        public string Designation { get; set; }
+
         public double Montant()
         {
-            return quantite * PrixUnitaire;
+            return Quantite * PrixUnitaire;
         }
 
         public string Description()
         {
             return
-                $"{designation}, qt:{quantite}, pu:{PrixUnitaire:C}, mnt:{Montant():C}";
+                $"{Designation}, qt:{Quantite}, pu:{PrixUnitaire:C}, mnt:{Montant():C}";
         }
     }
 }
